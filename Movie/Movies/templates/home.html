@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+{% for i in view %}
+<div class="col-sm-2 mt-4 my-4 mx-4">
+
+  <div id="a" class="card border border-2 border-danger " style="width: 18rem;">
+
+  <img src="{{i.image.url}}" class="card-img-top" height="150px" width="100%" alt="..." >
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+
+    <p class="card-text">{{i.description}}</p>
+    <a href="{% url 'movieapp:viewdetails' i.id %} " class="btn btn-primary">Movie link</a>
+  </div>
+</div> </div>{% endfor %}</div>
+
+
+
+{% endblock %}
